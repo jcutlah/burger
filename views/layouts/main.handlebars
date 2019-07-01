@@ -8,34 +8,5 @@
 </head>
 <body>
     {{{body}}}
-    <div class="wish-form">
-        <form action="/" method="POST" id="add-burger">
-            <label for="burger">Add a Burger to the Menu</label>
-            <input name="burger"></textarea>
-            <input id="submit-btn" type="submit" value="Add Burger">
-        </form>
-    </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        console.log('testing??');
-        $('.wish-form').each(function(){
-            console.log($(this));
-        })
-        $('#add-burger').on('submit', function(event){
-            event.preventDefault();
-            console.log($(this));
-            let burger = $("#add-burger [name='burger']").val();
-            $.ajax({
-                url: '/',
-                data: {
-                    burger
-                },
-                type: 'POST'
-            }).done(function(response){
-                console.log(response);
-                location.reload();
-            })
-        })
-    </script>>
 </body>
 </html>

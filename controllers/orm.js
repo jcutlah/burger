@@ -12,14 +12,24 @@ const orm = {
     },
     // get a specific burger
     // add a burger
-    addBurger: function(burgerName,callback){
+    addBurger: function(burger,callback){
         console.log('running addBurgers()');
         db.Burger.create({
-            burgerName
+            burgerName: burger.burger,
+            eaten: burger.eaten
         }).then(function(response){
             console.log(response);
             callback(response);
         });
+    },
+    updateBurger: function(id,newInfo,callback){
+        console.log('running updateBurger()');
+        db.Burger.update(newInfo, {
+            where: {id}
+        }).then(function(response){
+            console.log(response);
+            callback(response);
+        })
     }
     // remove a burger
 }

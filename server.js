@@ -3,6 +3,7 @@ const express = require('express');
 const db = require('./models');
 // const exphbs = require('express-handlebars');
 const app = express();
+const path = require('path');
 
 var PORT = process.env.PORT || 8080;
 
@@ -11,7 +12,7 @@ var PORT = process.env.PORT || 8080;
 // app.use(express.json());
 // app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 // app.set("view engine", "handlebars");
-
+app.use('/js/main', express.static(__dirname+ "public/assets/js"));
 
 // Static directory
 // app.use(express.static("public"));

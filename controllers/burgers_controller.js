@@ -8,6 +8,7 @@ module.exports = function(app){
     app.engine("handlebars", exphbs({ defaultLayout: "main" }));
     app.set("view engine", "handlebars");
     app.use(express.static("public"));
+
     app.get('/',function(req,res){
         orm.allBurgers(function(burgers){
             res.render('index',{title: "Eat Da Burger", burgers});
@@ -16,8 +17,15 @@ module.exports = function(app){
 
     app.post('/', function(req, res){
         console.log(req.body.burger);
-        orm.addBurger(req.body.burger,function(response){
+        orm.addBurger(req.body,function(response){
             res.json(response);
         });
     });
+
+    app.put('/', function(req, res){
+        console.log(req.body);
+        orm.updateBurger(req.body.id, req.body.update, function(response){
+            res.json(response);
+        });
+    })
 }
