@@ -9,11 +9,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col">
-            <div class="wish-form">
-                <form action="/" method="POST" id="add-burger">
-                    <label for="burger">Add Burger</label>
-                    <input name="burger"></textarea>
-                    <input id="submit-btn" type="submit" value="Add Burger">
+            <div class="wish-form form-group">
+                <form action="/" method="POST" class="form-inline" id="add-burger">
+                    <label class='sr-only' for="burgerName">Add Burger</label>
+                    <input placeholder="Add Burger" id="burger-name" required class="form-control" type="text" name="burger"></textarea>
+                    <button id="submit-btn" class="btn-dark" type="submit" value="Add Burger">Submit</button>
                 </form>
             </div>
         </div>
