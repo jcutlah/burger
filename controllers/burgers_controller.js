@@ -28,4 +28,10 @@ module.exports = function(app){
             res.json(response);
         });
     })
+    app.delete('/:id', function(req, res){
+        console.log(req.params.id);
+        orm.deleteBurger(req.params.id, function(response){
+            res.json(response);
+        })
+    })
 }
