@@ -1,0 +1,20 @@
+
+.devour:hover {
+    cursor: pointer;
+}
+.burger {
+    list-style: none;
+    padding: 20px;
+}
+.wish-form {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 960px){
+    .burger-inner-wrapper {
+        width: 100%;
+        display: block;
+    }
+
+}
