@@ -13,7 +13,7 @@ var PORT = process.env.PORT || 8080;
 // app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 // app.set("view engine", "handlebars");
 app.use('/js/main', express.static(__dirname+ "public/assets/js"));
-
+app.use(express.static(__dirname + '/public'));
 // Static directory
 // app.use(express.static("public"));
 
