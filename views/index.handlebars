@@ -1,30 +1,47 @@
-<div class="wish-form">
-    <form action="/" method="POST" id="add-burger">
-        <label for="burger">Add a Burger to the Menu</label>
-        <input name="burger"></textarea>
-        <input id="submit-btn" type="submit" value="Add Burger">
-    </form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-md-6 text-center">
+            <h1>Eat Da Burger</h1>
+            <p>Use the form below to add a new burger to the menu.</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="wish-form">
+                <form action="/" method="POST" id="add-burger">
+                    <label for="burger">Add Burger</label>
+                    <input name="burger"></textarea>
+                    <input id="submit-btn" type="submit" value="Add Burger">
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col text-center" id="uneaten">
+            <h2>Available Burgers</h2>
             <ul>
                 {{#each burgers}}
                     {{#unless eaten}}
-                    <li>
-                        {{burgerName}} 
-                        <button data-id="{{id}}" class="devour">Devour It</button>
-                    </li>
+                    <li class="uneaten-burger burger">
+                        <span class="burger-inner-wrapper">{{burgerName}}</span>
+                        <button data-id="{{id}}" class="btn-warning devour">Devour It</button>
+                    </li> 
                     {{/unless}}
                 {{/each}}
             </ul>
         </div>
-        <div class="col">
+        <div class="col text-center" id="eaten">
+            <h2>Devoured Burgers</h2>
             <ul>
                 {{#each burgers}}
                     {{#if eaten}}
-                    <li>
-                        {{burgerName}} 
+                    <li class="eaten-burger burger">
+                        <span class="burger-inner-wrapper">{{burgerName}}</span> 
+                        <button data-id="{{id}}" class="delete btn-danger">Remove</button>
                     </li>
                     {{/if}}
                 {{/each}}
@@ -67,5 +84,18 @@
                 location.reload();
             });
         });
+        $(document).on('click','.delete',function(){
+            console.log('delete it');
+            let burgerId = $(this).get(0).dataset.id;
+            console.log(burgerId);
+            $.ajax({
+                url: '/' + burgerId,
+                type: 'DELETE'
+            }).done(function(response){
+                console.log(response);
+                location.reload();
+            });
+
+        })
     });
 </script>
