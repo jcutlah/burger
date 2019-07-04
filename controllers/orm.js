@@ -30,8 +30,17 @@ const orm = {
             console.log(response);
             callback(response);
         })
-    }
+    },
     // remove a burger
+    deleteBurger: function(id, callback){
+        console.log('running deleteBurger()');
+        db.Burger.destroy({
+            where: {id}
+        }).then(function(response){
+            console.log(response);
+            callback(response);
+        })
+    }
 }
 
 module.exports = orm;
