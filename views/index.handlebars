@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col col-md-6 text-center">
-            <h1>Eat Da Burger</h1>
+            <h1>Eat Dat Burger</h1>
             <p>Use the form below to add a new burger to the menu.</p>
         </div>
     </div>
@@ -19,9 +19,9 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container" id="burgers">
     <div class="row">
-        <div class="col text-center" id="uneaten">
+        <div class="col-12 col-md-6 text-center" id="uneaten">
             <h2>Available Burgers</h2>
             <ul>
                 {{#each burgers}}
@@ -34,7 +34,7 @@
                 {{/each}}
             </ul>
         </div>
-        <div class="col text-center" id="eaten">
+        <div class="col-12 col-md-6 text-center" id="eaten">
             <h2>Devoured Burgers</h2>
             <ul>
                 {{#each burgers}}
