@@ -16,13 +16,26 @@
 #add-burger button {
     margin-left: 10px;
 }
+button#submit-btn {
+    height: 100%;
+    border: none;
+    margin: 0;
+    margin-left: -3px;
+    border-radius: 5px;
+}
+#burger-name, #submit-btn {
+    display: inline-block;
+}
+#burger-name {
+    width: 75%;
+}
 @media (max-width: 960px){
     .burger-inner-wrapper {
         width: 100%;
         display: block;
     }
-    #add-burger button {
+    /* #add-burger button {
         margin-left: 0;
         margin-top: 3px;
-    }
+    } */
 }
